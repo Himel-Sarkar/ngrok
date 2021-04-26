@@ -1,5 +1,6 @@
 @echo off
 :begin
+set mm=%cd%
 cls
 echo checking file structure...
 if exist "%Temp%\ngrok-stable-windows-amd64\ngrok.exe" (
@@ -73,8 +74,8 @@ cd \
 
 cd %temp%
 cd ngrok-stable-windows-amd64
-start cmd.exe @cmd /k "cd %cd%\ && py -m http.server 80 --bind 127.0.0.1"
-ngrok http "file:///%cd%"
+start cmd.exe @cmd /k "cd %mm%\ && py -m http.server 80 --bind 127.0.0.1"
+ngrok http "file:///%mm%"
 cd ..
 
 erase /Q *.*
