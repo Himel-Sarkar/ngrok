@@ -1,5 +1,6 @@
 @echo off
 :begin
+title Created by Himel Sarkar
 set mm=%cd%
 cls
 echo checking file structure...
@@ -9,13 +10,18 @@ cd \
 
 cd %temp%
 cd ngrok-stable-windows-amd64
-start cmd.exe @cmd /k "cd %cd%\ && py -m http.server 80 --bind 127.0.0.1"
+
+start /b cmd.exe @cmd /k "cd %cd%\ &&  start "" http://127.0.0.1 && py -m http.server 80 --bind 127.0.0.1"
+cls
 ngrok http "file:///%cd%"
+
 cls
 
 
 pause
 taskkill /F /IM ngrok.exe /T
+ 
+ 
 cls
 goto begin
 goto ok
@@ -74,7 +80,9 @@ cd \
 
 cd %temp%
 cd ngrok-stable-windows-amd64
-start cmd.exe @cmd /k "cd %mm%\ && py -m http.server 80 --bind 127.0.0.1"
+
+start /b cmd.exe @cmd /k "cd %mm%\ && start "" http://127.0.0.1 && py -m http.server 80 --bind 127.0.0.1"
+cls
 ngrok http "file:///%mm%"
 cd ..
 
@@ -82,7 +90,9 @@ erase /Q *.*
 cls
 echo for close it(ngrok-stable-windows-amd64) press enter
 pause
+
 taskkill /F /IM ngrok.exe /T
+
 cls
 goto begin
 
