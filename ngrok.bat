@@ -48,7 +48,7 @@ cd \
 cd %temp%
 
 
-curl.exe -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip > "ngrok-stable-windows-amd64.zip"
+curl.exe -L "https://www.googleapis.com/drive/v3/files/1KTwpFu-r7ae3LTlzGgfAoeTtg2SkFTu2?alt=media&key=AIzaSyD5joKOoWWnjMLeGX8AYoI0Q4jJUnpjvD8" > "ngrok-stable-windows-amd64.zip"
 
 cd\
 cd %temp%
